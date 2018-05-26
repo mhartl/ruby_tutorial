@@ -1,8 +1,6 @@
 require 'sinatra'
+require './day'
 
-DAYNAMES = ["Sunday", "Monday", "Tuesday", "Wednesday",
-            "Thursday", "Friday", "Saturday"]
 get '/' do
-  dayname = DAYNAMES[Time.now.wday]
-  "Hello, world! Happy #{dayname}."
+  "Hello, world! Happy #{day_of_the_week(Time.now)}."
 end
