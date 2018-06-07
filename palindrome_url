@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+require 'open-uri'
+require 'mhartl_palindrome'
+
+lines = open('https://cdn.learnenough.com/phrases.txt').readlines
+
+lines.each do |line|
+  if line.palindrome?
+    puts "palindrome detected: #{line}"
+  end
+end
+
+# File.readlines("phrases.txt").each do |line|
+#   if line.palindrome?
+#     puts "palindrome detected: #{line}"
+#   end
+# end
+
+# palindromes = File.readlines('phrases.txt').select(&:palindrome?)
+# File.write('palindromes.txt', palindromes.join)
+
+
+# text = fs.readFileSync("phrases.txt", "utf8")
+# text.split("\n").each do |line|
+#   phrase = new Phrase(line)
+#   if (phrase.palindrome()) {
+#     puts "palindrome detected:", line
+#   }
+# })

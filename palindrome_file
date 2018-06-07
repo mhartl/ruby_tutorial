@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+require 'mhartl_palindrome'
+
+# contents = File.read("phrases.txt")
+
+# contents.split("\n").each do |line|
+#   if line.palindrome?
+#     puts "palindrome detected: #{line}"
+#   end
+# end
+
+lines = File.readlines("phrases.txt")
+lines.each do |line|
+  if line.palindrome?
+    puts "palindrome detected: #{line}"
+  end
+end
+
+palindromes = File.readlines('phrases.txt').select(&:palindrome?)
+File.write('palindromes.txt', palindromes.join)
+
+
+# text = fs.readFileSync("phrases.txt", "utf8")
+# text.split("\n").each do |line|
+#   phrase = new Phrase(line)
+#   if (phrase.palindrome()) {
+#     puts "palindrome detected:", line
+#   }
+# })

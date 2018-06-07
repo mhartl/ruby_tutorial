@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require 'open-uri'
+require 'nokogiri'
+
+
+url = ARGV.shift
+doc = Nokogiri::HTML(open(url).read)
+doc.css('.reference').each(&:remove)
+# paragraphs = doc.css('p').map(&:content)
+puts doc.css('p').map(&:content).join("\n\n")
+# paragraphs.each do |paragraph|
+#   content = paragraph.content.strip
+#   convert_roman_numerals!(content)
+#   puts content + "\n\n" unless content.empty?
+# end
