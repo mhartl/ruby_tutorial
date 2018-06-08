@@ -3,7 +3,6 @@ require 'open-uri'
 require 'mhartl_palindrome'
 
 lines = open('https://cdn.learnenough.com/phrases.txt').readlines
-
 lines.each do |line|
   if line.palindrome?
     puts "palindrome detected: #{line}"
