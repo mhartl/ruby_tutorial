@@ -1,6 +1,9 @@
 require 'sinatra'
 require './day'
 
+DAYNAMES = ["Sunday", "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday"]
+
 get '/' do
-  "Hello, world! Happy #{day_of_the_week(Time.now)}."
+  greeting(Time.now)
 end
